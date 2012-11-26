@@ -18,8 +18,9 @@ How to use it
 -------------
 
 1. Drop the unzipped folder into the Moodle/course/format folder
-2. As admin, click Notifications, then install the plugin
-3. On a course, select 'Single' as the course format type
+2. *rename* folder to 'single'
+3. As admin, click Notifications, then install the plugin
+4. On a course, select 'Single' as the course format type
 
 Support
 -------
