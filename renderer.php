@@ -264,7 +264,8 @@ class format_single_renderer extends format_section_renderer_base {
         $sectiontopnav .= html_writer::start_tag('div', array('class' => 'format-single section-navigation mdl-top'));
         $sectiontopnav .= html_writer::tag('span', $sectionnavlinks['previous'], array('class' => 'mdl-left'));
         $sectiontopnav .= html_writer::tag('span', $sectionnavlinks['next'], array('class' => 'mdl-right'));
-        $sectiontopnav .= html_writer::empty_tag('div', array('style' => 'clear:both', 'class' => 'format-single clear-both'));
+	        $sectiontopnav .= html_writer::start_tag('div', array('style' => 'clear:both', 'class' => 'format-single clear-both'));
+    	    $sectiontopnav .= html_writer::end_tag('div');
         $sectiontopnav .= html_writer::end_tag('div');
         echo $sectiontopnav;
 
