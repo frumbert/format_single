@@ -125,7 +125,7 @@ class format_single_renderer extends format_section_renderer_base {
                 }
                 $previouslink = html_writer::tag('span', $this->output->larrow(), array('class' => 'larrow'));
                 $previouslink .= get_section_name($course, $sections[$back]);
-                $links['previous'] = html_writer::link(course_get_url($course, $back), $previouslink, $params);
+				$links['previous'] = str_replace('#section-', '&section=', html_writer::link(course_get_url($course, $back), $previouslink, $params));
             }
             $back--;
         }
@@ -196,7 +196,6 @@ class format_single_renderer extends format_section_renderer_base {
         $section = 0;
 
         $sectionmenu = array();
-        $tabs = array();
 
         $default_topic = -1;
         while ($section <= $course->numsections) {
@@ -250,8 +249,6 @@ class format_single_renderer extends format_section_renderer_base {
                         $sectionmenu[$section] = $sectionname;
                     }
 
-                    $tabs[] = new tabobject("tab_topic_" . $section, course_get_url($course, $section),
-                    '<font style="white-space:nowrap">' . s($sectionname) . "</font>", s($sectionname));
                 }
             }
             $section++;
